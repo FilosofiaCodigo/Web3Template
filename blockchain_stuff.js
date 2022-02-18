@@ -99,7 +99,7 @@ const contractFunction = async (unlock_number) => {
   const result = await contract.methods.claim(unlock_number)
   .send({ from: accounts[0], gas: 0, value: 0 })
   .on('transactionHash', function(hash){
-    document.getElementById("web3_message").textContent="Claiming...";
+    document.getElementById("web3_message").textContent="Confirming...";
   })
   .on('receipt', function(receipt){
     document.getElementById("web3_message").textContent="Success.";    })
